@@ -40,8 +40,7 @@ function LoginPage() {
                 <Input
                   className="mt-1"
                   type="email"
-                  placeholder="john@doe.com"
-                />
+                  placeholder="john@doe.com" css={undefined}                />
               </Label>
 
               <Label className="mt-4">
@@ -49,8 +48,7 @@ function LoginPage() {
                 <Input
                   className="mt-1"
                   type="password"
-                  placeholder="***************"
-                />
+                  placeholder="***************" css={undefined}                />
               </Label>
 
               <Link href="/example" passHref={true}>

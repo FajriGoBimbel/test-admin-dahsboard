@@ -1,34 +1,66 @@
 import { Scheduler } from "@aldabil/react-scheduler";
 import { useState } from "react";
+import { id } from "date-fns/locale";
+import Layout from "@/example/containers/Layout";
+import PageTitle from "@/example/components/Typography/PageTitle";
 
 export default function Calendar() {
-      // State untuk menyimpan nilai warna yang dipilih
-  const [selectedColor, setSelectedColor] = useState("#ff0000"); // Warna default
+  const [selectedColor, setSelectedColor] = useState("#ff0000");
+  const [defaultColor, setDefaultColor] = useState("#0000ff");
 
-  const handleColorChange = (event: any) => {
-    setSelectedColor(event.target.value);
-  };
   return (
-    <Scheduler
-      deletable={true}
-      fields={[
-        {
-          name: "user_id",
-          type: "select",
-          // Should provide options with type:"select"
-          options: [
-            { id: 1, text: "John", value: 1 },
-            { id: 2, text: "Mark", value: 2 },
-          ],
-          config: { label: "User", required: true, errMsg: "Plz Select User" },
-        },
-        {
-          name: "Description",
-          type: "input",
-          default: "Default Value...",
-          config: { label: "Details", multiline: true, rows: 4 },
-        },
-        {
+    <Layout>
+      <PageTitle>Kalender Kegiatan</PageTitle>
+      <Scheduler
+        locale={id}
+        hourFormat="24"
+        deletable={true}
+        editable={true}
+        translations={{
+          navigation: {
+            month: "Bulan",
+            week: "Minggu",
+            day: "Hari",
+            today: "Hari Ini",
+          },
+          form: {
+            addTitle: "Tambah Acara",
+            editTitle: "Ubah Acara",
+            confirm: "Submit",
+            delete: "Hapus",
+            cancel: "Batal",
+          },
+          event: {
+            title: "Judul",
+            start: "Mulai",
+            end: "Selesai",
+            allDay: "Semua Hari",
+          },
+          moreEvents: "More...",
+          loading: "Memproses..."
+        }}
+        fields={[
+          {
+            name: "user_id",
+            type: "select",
+            options: [
+              { id: 1, text: "John", value: 1 },
+              { id: 2, text: "Mark", value: 2 },
+            ],
+            config: {
+              label: "User",
+              required: true,
+              errMsg: "Pilih User",
+              
+            },
+          },
+          {
+            name: "Description",
+            type: "input",
+            default: "Kegiatan",
+            config: { label: "Details", multiline: true, rows: 4 },
+          },
+          {
             name: "color",
             type: "select",
             options: [
@@ -39,22 +71,25 @@ export default function Calendar() {
               { id: 5, text: "Purple", value: "#800080" },
               { id: 6, text: "Orange", value: "#ffa500" },
             ],
-            config: { label: "Color", required: true },
+            config: { label: "Warna", required: true },
           },
-      ]}
-      onEventClick={handleColorChange}
-      week={{
-        weekDays: [1, 2, 3, 4, 5, 6],
-        weekStartOn: 1,
-        startHour: 7,
-        endHour: 23,
-        step: 60
-      }}
-      day={{
-        startHour: 7,
-        endHour: 23,
-        step: 30
-      }}
-    />
+        ]}
+        onEventClick={(event: any) => {
+          setSelectedColor(event.color);
+        }}
+        week={{
+          weekDays: [1, 2, 3, 4, 5, 6],
+          weekStartOn: 0,
+          startHour: 7,
+          endHour: 23,
+          step: 60,
+        }}
+        day={{
+          startHour: 7,
+          endHour: 23,
+          step: 30,
+        }}
+      />
+    </Layout>
   );
 }

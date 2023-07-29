@@ -18,12 +18,12 @@ function Forms() {
       <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
         <Label>
           <span>Name</span>
-          <Input className="mt-1" placeholder="Jane Doe" />
+          <Input className="mt-1" placeholder="Jane Doe" css={undefined} />
         </Label>
 
         <Label className="mt-4">
           <span>Disabled</span>
-          <Input disabled className="mt-1" placeholder="Jane Doe" />
+          <Input disabled className="mt-1" placeholder="Jane Doe" css={undefined} />
         </Label>
 
         <div className="mt-4">
@@ -32,15 +32,15 @@ function Forms() {
           <Label>Account Type</Label>
           <div className="mt-2">
             <Label radio>
-              <Input type="radio" value="personal" name="accountType" />
+              <Input type="radio" value="personal" name="accountType" css={undefined} />
               <span className="ml-2">Personal</span>
             </Label>
             <Label className="ml-6" radio>
-              <Input type="radio" value="business" name="accountType" />
+              <Input type="radio" value="business" name="accountType" css={undefined} />
               <span className="ml-2">Business</span>
             </Label>
             <Label disabled className="ml-6" radio>
-              <Input disabled type="radio" value="disabled" name="accountType" />
+              <Input disabled type="radio" value="disabled" name="accountType" css={undefined} />
               <span className="ml-2">Disabled</span>
             </Label>
           </div>
@@ -48,7 +48,7 @@ function Forms() {
 
         <Label className="mt-4">
           <span>Requested Limit</span>
-          <Select className="mt-1">
+          <Select className="mt-1" css={undefined}>
             <option>$1,000</option>
             <option>$5,000</option>
             <option>$10,000</option>
@@ -58,7 +58,7 @@ function Forms() {
 
         <Label className="mt-4">
           <span>Multiselect</span>
-          <Select className="mt-1" multiple>
+          <Select className="mt-1" multiple css={undefined}>
             <option>Option 1</option>
             <option>Option 2</option>
             <option>Option 3</option>
@@ -69,11 +69,11 @@ function Forms() {
 
         <Label className="mt-4">
           <span>Message</span>
-          <Textarea className="mt-1" rows={3} placeholder="Enter some long form content." />
+          <Textarea className="mt-1" rows={3} placeholder="Enter some long form content." css={undefined} />
         </Label>
 
         <Label className="mt-6" check>
-          <Input type="checkbox" />
+          <Input type="checkbox" css={undefined} />
           <span className="ml-2">
             I agree to the <span className="underline">privacy policy</span>
           </span>
@@ -85,19 +85,19 @@ function Forms() {
       <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
         <Label>
           <span>Invalid input</span>
-          <Input className="mt-1" valid={false} placeholder="Jane Doe" />
+          <Input className="mt-1" valid={false} placeholder="Jane Doe" css={undefined} />
           <HelperText valid={false}>Your password is too short.</HelperText>
         </Label>
 
         <Label className="mt-4">
           <span>Valid input</span>
-          <Input className="mt-1" valid={true} placeholder="Jane Doe" />
+          <Input className="mt-1" valid={true} placeholder="Jane Doe" css={undefined} />
           <HelperText valid={true}>Your password is strong.</HelperText>
         </Label>
 
         <Label className="mt-4">
           <span>Helper text</span>
-          <Input className="mt-1" placeholder="Jane Doe" />
+          <Input className="mt-1" placeholder="Jane Doe" css={undefined} />
           <HelperText>Your password must be at least 6 characters long.</HelperText>
         </Label>
       </div>

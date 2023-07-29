@@ -29,7 +29,7 @@ function ForgotPassword() {
 
               <Label>
                 <span>Email</span>
-                <Input className="mt-1" placeholder="Jane Doe" />
+                <Input className="mt-1" placeholder="Jane Doe" css={undefined} />
               </Label>
 
             <Link href="/example" passHref={true}>

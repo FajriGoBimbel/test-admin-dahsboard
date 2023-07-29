@@ -40,28 +40,25 @@ function CrateAccount() {
                 <Input
                   className="mt-1"
                   type="email"
-                  placeholder="john@doe.com"
-                />
+                  placeholder="john@doe.com" css={undefined}                />
               </Label>
               <Label className="mt-4">
                 <span>Password</span>
                 <Input
                   className="mt-1"
                   placeholder="***************"
-                  type="password"
-                />
+                  type="password" css={undefined}                />
               </Label>
               <Label className="mt-4">
                 <span>Confirm password</span>
                 <Input
                   className="mt-1"
                   placeholder="***************"
-                  type="password"
-                />
+                  type="password" css={undefined}                />
               </Label>
 
               <Label className="mt-6" check>
-                <Input type="checkbox" />
+                <Input type="checkbox" css={undefined} />
                 <span className="ml-2">
                   I agree to the{" "}
                   <span className="underline">privacy policy</span>
