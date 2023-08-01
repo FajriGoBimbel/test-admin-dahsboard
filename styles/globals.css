@@ -16,6 +16,12 @@
   }
 }
 
+@layer base{
+  body {
+      @apply dark:bg-gray-800 bg-white
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -25,3 +31,38 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* react scheduler */
+.rs__cell,
+.rs__header,
+.rs__time,
+.css-1nmp99l,
+.css-e572m3,
+.css-xkctyi {
+  z-index: 10 !important;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  color: #000;
+  font-weight: bold;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root[aria-label],
+.MuiButton-textPrimary,
+.rs__today_cell div p {
+  color: #22D3EE !important;
+  font-weight: bold !important;
+}
+
+.css-bw88rr-MuiPickersMonth-monthButton.Mui-selected,
+.css-1beqopj-MuiPickersYear-yearButton.Mui-selected {
+  background-color: #22D3EE !important;
+}
+
+.css-96e9fn div:nth-child(1) div:nth-child(2) {
+  color: #22D3EE;
+}
+/* 
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #22D3EE !important;
+} */

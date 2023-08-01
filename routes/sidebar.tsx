@@ -88,6 +88,30 @@ const routes: IRoute[] = [
       },
     ],
   },
+  // perpindahan siswa
+  {
+    icon: 'PagesIcon',
+    name: 'Perpindahan Siswa',
+    routes: [
+      // submenu
+      {
+        path: '#',
+        name: 'Gedung Siswa',
+      },
+      {
+        path: '#',
+        name: 'Produk Siswa',
+      },
+      {
+        path: '#',
+        name: 'Gedung',
+      },
+      {
+        path: '#',
+        name: 'Ruangan',
+      },
+    ],
+  },
   // soal
   {
     icon: 'PagesIcon',

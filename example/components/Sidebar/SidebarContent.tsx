@@ -39,7 +39,7 @@ function SidebarContent({ linkClicked }: ISidebarContent) {
           ) : (
             <li className={`${
               routeIsActive(pathname, route)
-                ? "bg-cyan-400 font-bold text-white"
+                ? "bg-cyan-400 font-bold text-white rounded-xl"
                 : ""
             }`} key={route.name}>
               <Link

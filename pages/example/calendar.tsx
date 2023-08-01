@@ -1,21 +1,17 @@
 import { Scheduler } from "@aldabil/react-scheduler";
-import { useState } from "react";
 import { id } from "date-fns/locale";
 import Layout from "@/example/containers/Layout";
 import PageTitle from "@/example/components/Typography/PageTitle";
 
 export default function Calendar() {
-  const [selectedColor, setSelectedColor] = useState("#ff0000");
-  const [defaultColor, setDefaultColor] = useState("#0000ff");
-
   return (
     <Layout>
       <PageTitle>Kalender Kegiatan</PageTitle>
+      <div className="mb-8">
       <Scheduler
         locale={id}
+        draggable={false}
         hourFormat="24"
-        deletable={true}
-        editable={true}
         translations={{
           navigation: {
             month: "Bulan",
@@ -48,34 +44,33 @@ export default function Calendar() {
               { id: 2, text: "Mark", value: 2 },
             ],
             config: {
-              label: "User",
+              label: "Pengguna",
               required: true,
               errMsg: "Pilih User",
-              
             },
           },
           {
             name: "Description",
             type: "input",
-            default: "Kegiatan",
-            config: { label: "Details", multiline: true, rows: 4 },
+            config: { label: "Detail Acara", placeholder: "Detail Acara...", multiline: true, rows: 4 },
           },
           {
             name: "color",
             type: "select",
             options: [
-              { id: 1, text: "Red", value: "#ff0000" },
-              { id: 2, text: "Green", value: "#00ff00" },
-              { id: 3, text: "Blue", value: "#0000ff" },
-              { id: 4, text: "Yellow", value: "#ffff00" },
-              { id: 5, text: "Purple", value: "#800080" },
-              { id: 6, text: "Orange", value: "#ffa500" },
+              { id: 1, text: "Biru Muda", value: "#22D3EE" },
+              { id: 2, text: "Merah", value: "#C7172C" },
+              { id: 3, text: "Kuning", value: "#FDD100" },
+              { id: 4, text: "Hitam", value: "#111827" },
             ],
-            config: { label: "Warna", required: true },
+            config: { label: "Warna", required: true, errMsg: "Pilih Warna" },
           },
         ]}
-        onEventClick={(event: any) => {
-          setSelectedColor(event.color);
+        month={{
+          weekDays: [1, 2, 3, 4, 5, 6],
+          weekStartOn: 0,
+          startHour: 7,
+          endHour: 23,
         }}
         week={{
           weekDays: [1, 2, 3, 4, 5, 6],
@@ -88,8 +83,9 @@ export default function Calendar() {
           startHour: 7,
           endHour: 23,
           step: 30,
-        }}
+        }} 
       />
+      </div>
     </Layout>
   );
 }
